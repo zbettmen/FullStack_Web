@@ -12,7 +12,7 @@
 </head>
 <body>
 <nav th:replace="navbar:: Navbar"></nav>
-<div class="container" sec:authorize="isAuthenticated() || hasAuthority('ADMIN')>
+<div class="container" sec:authorize="isAuthenticated() || hasAuthority('ADMIN')">
 
 <table class="table">
     <tr>
