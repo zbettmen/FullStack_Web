@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <script defer th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script defer th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script defer th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <meta charset="UTF-8">
+    <title>users</title>
+</head>
+<body>
+<nav th:replace="navbar:: Navbar"></nav>
+<div class="container" sec:authorize="isAuthenticated() || hasAuthority('ADMIN')>
+
+<table class="table">
+    <tr>
+        <th>
+            firstname
+        </th>
+        <th>
+            lastname
+        </th>
+        <th>
+            email
+        </th>
+        <th>
+            reggdate
+        </th>
+    </tr >
+    <tr th:each="user: ${userList}">
+        <td> <span th:text="${user.firstName}"></span></td>
+        <td> <span th:text="${user.lastName}"></span></td>
+        <td> <span th:text="${user.email}"></span></td>
+        <td> <span th:text="${user.regDate}"></span></td>
+    </tr>
+</table>
+</div>
+</body>
+</html>
