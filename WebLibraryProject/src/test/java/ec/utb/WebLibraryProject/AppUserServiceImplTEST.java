@@ -19,8 +19,8 @@ public class AppUserServiceImplTEST {
     private AppUserService appUserService;
 
 
-    @Test
-    public void test1(){
+    @Test //Testing register user so all working when you register a user in login page
+    public void registerUser(){
        String firstName = "Test";
        String lastName = "Testsson";
        String email = "test@gmail.com";
@@ -35,7 +35,7 @@ public class AppUserServiceImplTEST {
 
     }
 
-    @Test
+    @Test// testing findbyid finding a id and see if its find
     public void findById(){
         int idFind = 1;
 
